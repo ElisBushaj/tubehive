@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-black;
+}
+
+.text-stroke-2 {
+  -webkit-text-stroke: 2px #ff0040;
+}
+
+.img-noselect {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* For WebKit browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-70% from-stone-700 to-90% to-black;
+}
+
+* {
+  scrollbar-color: #888 #f1f1f1;
+  scrollbar-width: thin;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+/* Width of the scrollbar thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gradient-to-b from-70% from-stone-600 to-90% to-black;
+}
+
+/* Corner rounding of the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  border-radius: 6px; /* rounding of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
