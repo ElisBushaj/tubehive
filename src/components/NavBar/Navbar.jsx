@@ -1,6 +1,9 @@
+import DownloadingMenu from "./DownloadingMenu";
+import Search from "./Search";
+
 export default function Navbar() {
   return (
-    <nav className="flex w-full">
+    <nav className="flex w-full flex-row items-center justify-between">
       <div className="select-none w-40 relative flex">
         <a href="/">
           <div className="cursor-pointer p-1 m-4">
@@ -13,6 +16,8 @@ export default function Navbar() {
           </div>
         </a>
       </div>
+      <Search />
+      <DownloadingMenu />
     </nav>
   );
 }
