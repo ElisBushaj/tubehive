@@ -13,7 +13,7 @@ const Search = () => {
     videos.length > 0 && (
       <form
         onSubmit={searchVideos}
-        className="w-1/2 flex flex-row h-9 text-white border overflow-hidden border-stone-700 bg-stone-950 rounded-full"
+        className="flex-1 sm:flex-none sm:w-1/2 flex ml-8 sm:ml-0 flex-row h-9 text-white border overflow-hidden border-stone-700 bg-stone-950 rounded-full"
       >
         <input
           className="flex flex-1 h-full bg-stone-950 ml-4 mr-1 placeholder:text-stone-500 outline-none"

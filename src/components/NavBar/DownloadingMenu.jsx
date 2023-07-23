@@ -46,7 +46,7 @@ const DownloadingMenu = () => {
       </div>
     );
 
-  return <div className="w-40" />;
+  return <div className="mx-8 md:mx-0 md:w-40" />;
 };
 
 export default DownloadingMenu;

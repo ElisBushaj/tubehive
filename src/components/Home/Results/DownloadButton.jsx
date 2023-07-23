@@ -16,7 +16,7 @@ const DownloadButton = ({ video }) => {
 
   if (downloading) {
     return (
-      <div className="flex h-full w-10 justify-center items-center">
+      <div className="flex w-full xs:h-full xs:w-10 justify-center items-center">
         <div className="w-10 h-10 ">
           <CircularProgressbar
             minValue={0}
@@ -43,7 +43,7 @@ const DownloadButton = ({ video }) => {
           progress: 0,
         })
       }
-      className="bg-gray-800 hover:bg-gray-800/90 w-10 transition-colors rounded-r-lg justify-center items-center flex hover:text-primary"
+      className="bg-gray-800 hover:bg-gray-800/90 w-full xs:w-10 h-8 xs:h-auto transition-colors rounded-b xs:rounded-b-none xs:rounded-r-lg justify-center items-center flex hover:text-primary"
     >
       <BsDownload className="text-xl" />
     </button>

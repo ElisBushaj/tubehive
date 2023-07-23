@@ -1,6 +1,4 @@
 import axios from "axios";
-import download from "js-file-download";
-
 import { createContext, useContext, useState } from "react";
 
 const DownloadContext = createContext();
@@ -25,13 +23,15 @@ export const DownloadProvider = ({ children }) => {
       const merged = [...arrAfterRemove, { ...video }];
       return merged;
     });
+
     try {
-      const res = await axios.get(
-        `http://localhost:4000/download/audio/${video.videoId}`,
+      const response = await axios.get(
+        `http://192.168.100.32:4000/download/audio/${video.videoId}`,
         {
           responseType: "blob",
           onDownloadProgress: (event) => {
             const progress = Math.round((event.loaded / event.total) * 100);
+            console.log(progress);
             setdownloadingFiles((prev) => {
               const updatedFiles = prev.map((item) => {
                 if (item.videoId === video.videoId) {
@@ -44,7 +44,15 @@ export const DownloadProvider = ({ children }) => {
           },
         }
       );
-      download(res.data, `${video.title}.mp3`);
+
+      const downloadUrl = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.setAttribute("download", `${video.title}.mp3`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(downloadUrl);
     } catch (error) {
       console.log(error);
     } finally {

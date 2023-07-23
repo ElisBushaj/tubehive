@@ -3,8 +3,8 @@ import Search from "./Search";
 
 export default function Navbar() {
   return (
-    <nav className="flex w-full flex-row items-center justify-between">
-      <div className="select-none w-40 relative flex">
+    <nav className="flex w-full h-16 flex-row items-center justify-between">
+      <div className="select-none w-40 relative hidden sm:flex">
         <a href="/">
           <div className="cursor-pointer p-1 m-4">
             <img

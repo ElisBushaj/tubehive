@@ -5,7 +5,7 @@ export default function Search() {
   const { search, setSearch, searchVideos } = useHome();
 
   return (
-    <div className="w-3/4 sm:w-3/5 lg:w-2/5 flex space-y-3 flex-col justify-center items-center">
+    <div className="w-[90%] xs:w-4/5 sm:w-3/5 lg:w-2/5 flex space-y-3 flex-col justify-center items-center">
       <Logo />
       <form
         onSubmit={searchVideos}

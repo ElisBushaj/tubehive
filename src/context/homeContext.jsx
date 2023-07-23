@@ -16,7 +16,7 @@ export const HomeProvider = ({ children }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:4000/search", {
+      const res = await axios.post("http://192.168.100.32:4000/search", {
         search_query: search,
       });
       setVideos(res.data);
