@@ -1,18 +1,19 @@
 import Layout from "./components/Layout";
-import Home from "./pages/Home";
-import { DownloadProvider } from "./context/downloadContext";
-import { HomeProvider } from "./context/homeContext";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HomePage, SearchPage } from "./pages";
 
 const App = () => {
-  return (
-    <DownloadProvider>
-      <HomeProvider>
-        <Layout>
-          <Home />
-        </Layout>
-      </HomeProvider>
-    </DownloadProvider>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<HomePage />} />
+					<Route path="search" element={<SearchPage />} />
+					<Route path="*" element={<h1>Not Found</h1>} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	);
 };
 
 export default App;

@@ -1,3 +1,5 @@
+import { version } from "../../package.json"; // adjust the path as needed
+
 export default function Footer() {
 	return (
 		<footer className="flex flex-col text-white">
@@ -49,7 +51,7 @@ export default function Footer() {
 			</div>
 			<div className="flex flex-col items-center justify-center py-4 space-y-2 text-sm bg-gray-950">
 				<p>We are not affiliated with YouTube.</p>
-				<p>© 2023 TubeHive 1.0.2. All rights reserved.</p>
+				<p>© 2023 TubeHive {version}. All rights reserved.</p>
 			</div>
 		</footer>
 	);
