@@ -5,17 +5,21 @@ import { useEffect } from "react";
 
 const App = () => {
 	useEffect(() => {
-		function _0x2757x1() {
-			const _0x2757x2 = /./;
-			_0x2757x2.toString = function () {
+		function isDevToolsOpen() {
+			const devTools = /./;
+			devTools.toString = function () {
+				// If this function is overridden, dev tools are likely open
+				// eslint-disable-next-line no-debugger
 				debugger;
 			};
-			console["log"]("%c", _0x2757x2);
+			console.log("%c", devTools);
 		}
-		const _0x2757x3 = setInterval(_0x2757x1, 0x3e8);
+
+		// Set up an interval to continuously check if dev tools are open
+		const interval = setInterval(isDevToolsOpen, 1000);
 
 		return () => {
-			clearInterval(_0x2757x3);
+			clearInterval(interval);
 		};
 	}, []);
 
